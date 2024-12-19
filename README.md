@@ -72,7 +72,7 @@ $ cp config.example.js config.js
 $ cd app
 # For node 16
 $ npm install
-# For node 18, use legacy peer dependencies
+# For node 18 or higher, use legacy peer dependencies
 $ npm install --legacy-peer-deps  
 ```
 
