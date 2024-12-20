@@ -70,7 +70,7 @@ $ cp config.example.js config.js
 
 ```bash
 $ cd app
-$ npm install
+$ npm install --legacy-peer-deps
 ```
 
 
