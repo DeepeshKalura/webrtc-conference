@@ -494,7 +494,7 @@ export default class PeerView extends React.Component {
     clearInterval(this._videoResolutionPeriodicTimer)
     cancelAnimationFrame(this._faceDetectionRequestAnimationFrame)
 
-    const { videoElem } = this.refs
+    const videoElem = this._videoElemRef.current
 
     if (videoElem) {
       videoElem.oncanplay = null
@@ -534,7 +534,8 @@ export default class PeerView extends React.Component {
 
     if (faceDetection) this._stopFaceDetection()
 
-    const { audioElem, videoElem } = this.refs
+    const audioElem = this._audioElemRef.current
+    const videoElem = this._videoElemRef.current
 
     if (audioTrack) {
       const stream = new MediaStream()
@@ -605,7 +606,7 @@ export default class PeerView extends React.Component {
   _startVideoResolution() {
     this._videoResolutionPeriodicTimer = setInterval(() => {
       const { videoResolutionWidth, videoResolutionHeight } = this.state
-      const { videoElem } = this.refs
+      const videoElem = this._videoElemRef.current
 
       if (
         videoElem.videoWidth !== videoResolutionWidth ||
@@ -629,7 +630,8 @@ export default class PeerView extends React.Component {
   }
 
   _startFaceDetection() {
-    const { videoElem, canvas } = this.refs
+    const videoElem = this._videoElemRef.current
+    const canvasElem = this._canvasElemRef.current
 
     const step = async () => {
       // NOTE: Somehow this is critical. Otherwise the Promise returned by
@@ -649,8 +651,8 @@ export default class PeerView extends React.Component {
         const width = videoElem.offsetWidth
         const height = videoElem.offsetHeight
 
-        canvas.width = width
-        canvas.height = height
+        canvasElem.width = width
+        canvasElem.height = height
 
         // const resizedDetection = detection.forSize(width, height);
         const resizedDetections = faceapi.resizeResults(detection, {
@@ -658,11 +660,11 @@ export default class PeerView extends React.Component {
           height,
         })
 
-        faceapi.draw.drawDetections(canvas, resizedDetections)
+        faceapi.draw.drawDetections(canvasElem, resizedDetections)
       } else {
         // Trick to hide the canvas rectangle.
-        canvas.width = 0
-        canvas.height = 0
+        canvasElem.width = 0
+        canvasElem.height = 0
       }
 
       this._faceDetectionRequestAnimationFrame = requestAnimationFrame(() =>
