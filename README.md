@@ -73,7 +73,7 @@ $ cd app
 # For node 16
 $ npm install
 # For node 18 or higher, use legacy peer dependencies
-$ npm install --legacy-peer-deps  
+$ npm install --legacy-peer-deps
 ```
 
 
