@@ -509,7 +509,6 @@ export default class PeerView extends React.Component {
 
 	UNSAFE_componentWillUpdate() {
 		const { isMe, audioTrack, videoTrack, videoRtpParameters } = this.props;
-
 		const { maxSpatialLayer } = this.state;
 
 		if (isMe && videoRtpParameters && maxSpatialLayer === null) {
@@ -683,10 +682,10 @@ export default class PeerView extends React.Component {
 	_stopFaceDetection() {
 		cancelAnimationFrame(this._faceDetectionRequestAnimationFrame);
 
-		const { canvas } = this.refs;
+		const canvasElem = this._canvasElemRef.current;
 
-		canvas.width = 0;
-		canvas.height = 0;
+		canvasElem.width = 0;
+		canvasElem.height = 0;
 	}
 
 	_printProducerScore(id, score) {
