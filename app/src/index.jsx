@@ -8,7 +8,6 @@ import {
 	createStore as createReduxStore,
 } from 'redux';
 import thunk from 'redux-thunk';
-// import { createLogger as createReduxLogger } from 'redux-logger';
 import randomString from 'random-string';
 import * as faceapi from 'face-api.js';
 import Logger from './Logger';
@@ -25,19 +24,6 @@ import './scss/index.scss';
 
 const logger = new Logger();
 const reduxMiddlewares = [thunk];
-
-// if (process.env.NODE_ENV === 'development')
-// {
-//  const reduxLogger = createReduxLogger(
-//    {
-//      duration  : true,
-//      timestamp : false,
-//      level     : 'log',
-//      logErrors : true
-//    });
-
-//  reduxMiddlewares.push(reduxLogger);
-// }
 
 let roomClient;
 const store = createReduxStore(
