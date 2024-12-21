@@ -1,3 +1,6 @@
+@use '../mixins';
+@use '../variables';
+
 [data-component='PeerView'] {
 	position: relative;
 	flex: 100 100 auto;
@@ -6,7 +9,7 @@
 	display: flex;
 	flex-direction: column;
 	overflow: hidden;
-	background-color: $COLOR_BG_1;
+	background-color: variables.$COLOR_BG_1;
 	background-image: url('/images/buddy.svg');
 	background-position: bottom;
 	background-size: auto 80%;
@@ -48,7 +51,7 @@
 				transition-property: opacity, background-color;
 				transition-duration: 0.15s;
 
-				@include desktop() {
+				@include mixins.desktop() {
 					width: 28px;
 					height: 28px;
 					opacity: 0.75;
@@ -58,7 +61,7 @@
 					}
 				}
 
-				@include mobile() {
+				@include mixins.mobile() {
 					width: 26px;
 					height: 26px;
 				}
@@ -93,11 +96,11 @@
 			transform-origin: left top;
 			transition: 0.1s;
 
-			@include desktop() {
+			@include mixins.desktop() {
 				top: 36px;
 			}
 
-			@include mobile() {
+			@include mixins.mobile() {
 				top: 34px;
 			}
 
@@ -162,7 +165,7 @@
 			flex-direction: column;
 			justify-content: flex-end;
 
-			@include desktop() {
+			@include mixins.desktop() {
 				&.is-me {
 					padding: 10px;
 					align-items: flex-start;
@@ -175,7 +178,7 @@
 				}
 			}
 
-			@include mobile() {
+			@include mixins.mobile() {
 				&.is-me {
 					padding: 10px;
 					align-items: flex-start;
@@ -204,7 +207,7 @@
 				&.editable {
 					pointer-events: auto;
 
-					@include desktop() {
+					@include mixins.desktop() {
 						&:hover {
 							background-color: rgba(#aeff00, 0.25);
 						}

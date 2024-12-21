@@ -1,9 +1,12 @@
+@use '../mixins';
+@use '../variables';
+
 [data-component='Room'] {
 	position: relative;
 	height: 100%;
 	width: 100%;
 
-	@include AppearFadeIn(300ms);
+	@include mixins.AppearFadeIn(300ms);
 
 	> .state {
 		position: fixed;
@@ -13,15 +16,15 @@
 		justify-content: center;
 		align-items: center;
 		border-radius: 25px;
-		background-color: $COLOR_BG_1;
+		background-color: variables.$COLOR_BG_1;
 
-		@include desktop() {
+		@include mixins.desktop() {
 			top: 20px;
 			left: 20px;
 			width: 124px;
 		}
 
-		@include mobile() {
+		@include mixins.mobile() {
 			top: 10px;
 			left: 10px;
 			width: 110px;
@@ -31,14 +34,14 @@
 			flex: 0 0 auto;
 			border-radius: 100%;
 
-			@include desktop() {
+			@include mixins.desktop() {
 				margin: 6px;
 				margin-right: 0;
 				height: 16px;
 				width: 16px;
 			}
 
-			@include mobile() {
+			@include mixins.mobile() {
 				margin: 4px;
 				margin-right: 0;
 				height: 16px;
@@ -57,7 +60,7 @@
 			&.connected {
 				background-color: rgba(#30bd18, 0.75);
 
-				@include mobile() {
+				@include mixins.mobile() {
 					display: none;
 				}
 			}
@@ -73,16 +76,16 @@
 			font-weight: 400;
 			color: rgba(#fff, 0.75);
 
-			@include desktop() {
+			@include mixins.desktop() {
 				font-size: 12px;
 			}
 
-			@include mobile() {
+			@include mixins.mobile() {
 				font-size: 10px;
 			}
 
 			&.connected {
-				@include mobile() {
+				@include mixins.mobile() {
 					display: none;
 				}
 			}
@@ -93,13 +96,13 @@
 		position: fixed;
 		z-index: 100;
 
-		@include desktop() {
+		@include mixins.desktop() {
 			top: 55px;
 			left: 20px;
 			width: 124px;
 		}
 
-		@include mobile() {
+		@include mixins.mobile() {
 			top: 40px;
 			height: 18px;
 			width: 110px;
@@ -120,14 +123,14 @@
 			font-weight: 400;
 			color: rgba(#fff, 0.75);
 			border-radius: 25px;
-			background-color: $COLOR_BG_1;
+			background-color: variables.$COLOR_BG_1;
 			margin-bottom: 2px;
 
-			@include desktop() {
+			@include mixins.desktop() {
 				font-size: 11px;
 			}
 
-			@include mobile() {
+			@include mixins.mobile() {
 				font-size: 9px;
 			}
 
@@ -150,7 +153,7 @@
 
 		> .room-link {
 			width: auto;
-			background-color: $COLOR_BG_1;
+			background-color: variables.$COLOR_BG_1;
 			border-bottom-right-radius: 4px;
 			border-bottom-left-radius: 4px;
 			box-shadow: 0px 3px 12px 2px rgba(#111, 0.4);
@@ -168,12 +171,12 @@
 				transition-property: color;
 				transition-duration: 0.1s;
 
-				@include desktop() {
+				@include mixins.desktop() {
 					padding: 10px 20px;
 					font-size: 12px;
 				}
 
-				@include mobile() {
+				@include mixins.mobile() {
 					padding: 6px 10px;
 					font-size: 10px;
 				}
@@ -198,7 +201,7 @@
 			border-color: #fff;
 		}
 
-		@include desktop() {
+		@include mixins.desktop() {
 			height: 250px;
 			width: 294px;
 			bottom: 60px;
@@ -206,7 +209,7 @@
 			border: 1px solid rgba(#fff, 0.15);
 		}
 
-		@include mobile() {
+		@include mixins.mobile() {
 			height: 220px;
 			width: 200px;
 			bottom: 50px;
@@ -221,7 +224,7 @@
 		overflow: hidden;
 		box-shadow: 0px 5px 12px 2px rgba(#111, 0.5);
 
-		@include desktop() {
+		@include mixins.desktop() {
 			height: 30px;
 			width: 294px;
 			bottom: 20px;
@@ -229,7 +232,7 @@
 			border: 1px solid rgba(#fff, 0.15);
 		}
 
-		@include mobile() {
+		@include mixins.mobile() {
 			height: 30px;
 			width: 200px;
 			bottom: 10px;
@@ -248,13 +251,13 @@
 		justify-content: center;
 		align-items: center;
 
-		@include desktop() {
+		@include mixins.desktop() {
 			left: 20px;
 			width: 36px;
 			margin-top: -60px;
 		}
 
-		@include mobile() {
+		@include mixins.mobile() {
 			left: 10px;
 			width: 32px;
 			margin-top: -80px;
@@ -266,18 +269,18 @@
 			background-position: center;
 			background-size: 75%;
 			background-repeat: no-repeat;
-			background-color: $COLOR_BG_1;
+			background-color: variables.$COLOR_BG_1;
 			cursor: pointer;
 			transition-property: opacity, background-color;
 			transition-duration: 0.2s;
 			border-radius: 100%;
 
-			@include desktop() {
+			@include mixins.desktop() {
 				height: 36px;
 				width: 36px;
 			}
 
-			@include mobile() {
+			@include mixins.mobile() {
 				height: 32px;
 				width: 32px;
 			}

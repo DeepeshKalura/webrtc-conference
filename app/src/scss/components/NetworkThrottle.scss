@@ -1,3 +1,6 @@
+@use 'sass:color';
+@use '../variables';
+
 [data-component='NetworkThrottle'] {
 	position: absolute;
 	top: 0;
@@ -39,7 +42,7 @@
 				font-weight: 400;
 				font-size: 11px;
 				text-align: right;
-				color: $COLOR_BG_1;
+				color: variables.$COLOR_BG_1;
 			}
 
 			> .value {
@@ -49,7 +52,7 @@
 				padding: 4px 8px;
 				font-size: 11px;
 				text-align: right;
-				color: $COLOR_BG_2;
+				color: variables.$COLOR_BG_2;
 				border: none;
 				background: rgba(#666, 0.1);
 				border-radius: 2px;
@@ -61,7 +64,7 @@
 				}
 
 				&::placeholder {
-					color: rgba($COLOR_BG_2, 0.25);
+					color: rgba(variables.$COLOR_BG_2, 0.25);
 				}
 
 				&:focus {
@@ -108,7 +111,7 @@
 			}
 
 			&.reset {
-				background: lighten($COLOR_BG_1, 15%);
+				background: color.adjust(variables.$COLOR_BG_1, $lightness: 15%);
 			}
 		}
 	}

@@ -1,8 +1,10 @@
+@use '../mixins';
+
 [data-component='Peers'] {
 	min-height: 100%;
 	width: 100%;
 
-	@include desktop() {
+	@include mixins.desktop() {
 		width: 100%;
 		padding: 40px 0 220px 0;
 		display: flex;
@@ -13,7 +15,7 @@
 		align-content: center;
 	}
 
-	@include mobile() {
+	@include mixins.mobile() {
 		min-height: 100vh;
 		width: 100%;
 		display: flex;
@@ -25,9 +27,9 @@
 	> .peer-container {
 		overflow: hidden;
 
-		@include AppearFadeIn(1000ms);
+		@include mixins.AppearFadeIn(1000ms);
 
-		@include desktop() {
+		@include mixins.desktop() {
 			flex: 0 0 auto;
 			height: 382px;
 			width: 450px;
@@ -42,7 +44,7 @@
 			}
 		}
 
-		@include mobile() {
+		@include mixins.mobile() {
 			flex: 100 100 auto;
 			order: 2;
 			min-height: 25vh;

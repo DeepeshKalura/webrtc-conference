@@ -1,3 +1,6 @@
+@use '../mixins';
+@use '../variables';
+
 [data-component='Notifications'] {
 	position: fixed;
 	z-index: 9999;
@@ -11,12 +14,12 @@
 	justify-content: flex-end;
 	align-items: flex-end;
 
-	@include desktop() {
+	@include mixins.desktop() {
 		padding: 10px;
 		width: 300px;
 	}
 
-	@include mobile() {
+	@include mixins.mobile() {
 		padding: 4px;
 		width: 65%;
 		max-width: 220px;
@@ -31,11 +34,11 @@
 		justify-content: flex-start;
 		align-items: center;
 
-		@include desktop() {
+		@include mixins.desktop() {
 			min-width: 75%;
 		}
 
-		@include mobile() {
+		@include mixins.mobile() {
 			width: 100%;
 		}
 
@@ -56,11 +59,11 @@
 			transition-delay: 0s, 0s;
 		}
 
-		@include desktop() {
+		@include mixins.desktop() {
 			padding: 16px 24px 16px 12px;
 		}
 
-		@include mobile() {
+		@include mixins.mobile() {
 			padding: 6px 16px 6px 12px;
 		}
 
@@ -82,11 +85,11 @@
 				line-height: 1.35em;
 				margin-bottom: 10px;
 
-				@include desktop() {
+				@include mixins.desktop() {
 					font-size: 14px;
 				}
 
-				@include mobile() {
+				@include mixins.mobile() {
 					font-size: 12px;
 				}
 			}
@@ -96,18 +99,18 @@
 				cursor: default;
 				line-height: 1.35em;
 
-				@include desktop() {
+				@include mixins.desktop() {
 					font-size: 13px;
 				}
 
-				@include mobile() {
+				@include mixins.mobile() {
 					font-size: 12px;
 				}
 			}
 		}
 
 		&.info {
-			background-color: $COLOR_BG_2;
+			background-color: variables.$COLOR_BG_2;
 			color: rgba(#fff, 0.75);
 
 			> .icon {

@@ -1,10 +1,18 @@
-@import './nib-reset';
-@include global-reset();
+@use './variables';
+@use './mixins';
+@use './fonts';
+@use './reset';
 
-@import './variables';
-@import './mixins';
-@import './fonts';
-@import './reset';
+// Components
+@use './components/Room';
+@use './components/Me';
+@use './components/ChatInput';
+@use './components/Peers';
+@use './components/Peer';
+@use './components/PeerView';
+@use './components/Stats';
+@use './components/Notifications';
+@use './components/NetworkThrottle';
 
 html {
 	height: 100%;
@@ -19,11 +27,11 @@ html {
 	font-family: 'Roboto';
 	font-weight: 300;
 
-	@include desktop() {
+	@include mixins.desktop() {
 		font-size: 16px;
 	}
 
-	@include mobile() {
+	@include mixins.mobile() {
 		font-size: 12px;
 	}
 }
@@ -35,17 +43,6 @@ body {
 #mediasoup-demo-app-container {
 	height: 100%;
 	width: 100%;
-
-	// Components
-	@import './components/Room';
-	@import './components/Me';
-	@import './components/ChatInput';
-	@import './components/Peers';
-	@import './components/Peer';
-	@import './components/PeerView';
-	@import './components/Stats';
-	@import './components/Notifications';
-	@import './components/NetworkThrottle';
 }
 
 // Hack to detect in JS the current media query
@@ -58,11 +55,11 @@ body {
 	width: 1px;
 
 	// In desktop let it "visible" so elem.offsetParent returns the parent element
-	@include desktop() {
+	@include mixins.desktop() {
 	}
 
 	// In mobile ensure it's not displayed so elem.offsetParent returns null
-	@include mobile() {
+	@include mixins.mobile() {
 		display: none;
 		position: fixed; // Required for old IE
 	}

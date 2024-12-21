@@ -1,3 +1,5 @@
+@use '../mixins';
+
 [data-component='Me'] {
 	position: relative;
 	height: 100%;
@@ -29,7 +31,7 @@
 			transition-property: opacity, background-color;
 			transition-duration: 0.15s;
 
-			@include desktop() {
+			@include mixins.desktop() {
 				width: 28px;
 				height: 28px;
 				opacity: 0.85;
@@ -39,7 +41,7 @@
 				}
 			}
 
-			@include mobile() {
+			@include mixins.mobile() {
 				width: 26px;
 				height: 26px;
 			}

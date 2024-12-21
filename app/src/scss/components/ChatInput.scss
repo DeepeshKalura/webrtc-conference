@@ -1,3 +1,5 @@
+@use '../mixins';
+
 [data-component='ChatInput'] {
 	position: relative;
 	height: 100%;
@@ -17,7 +19,7 @@
 		line-height: 22px;
 		border: none;
 
-		@include placeholder() {
+		@include mixins.placeholder() {
 			color: rgba(#fff, 0.35);
 		}
 
