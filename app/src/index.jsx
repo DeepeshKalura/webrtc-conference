@@ -58,8 +58,19 @@ domready(async () => {
 	run();
 });
 
+window.RUN = run;
+
 async function run() {
 	logger.debug('run() [environment:%s]', process.env.NODE_ENV);
+
+	if (window.CLIENT) {
+		window.CLIENT.close();
+
+		// eslint-disable-next-line require-atomic-updates
+		window.CLIENT = undefined;
+		// eslint-disable-next-line require-atomic-updates
+		window.CC = undefined;
+	}
 
 	const urlParser = new UrlParse(window.location.href, true);
 	const peerId = randomString({ length: 8 }).toLowerCase();
