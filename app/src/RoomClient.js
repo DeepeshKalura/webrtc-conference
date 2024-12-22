@@ -1656,8 +1656,9 @@ export default class RoomClient {
 		try {
 			// Create chat DataProducer.
 			this._chatDataProducer = await this._sendTransport.produceData({
-				ordered: false,
-				maxRetransmits: 1,
+				// ordered: false,
+				// maxRetransmits: 1,
+				ordered: true,
 				label: 'chat',
 				priority: 'medium',
 				appData: { info: 'my-chat-DataProducer' },
@@ -1733,8 +1734,9 @@ export default class RoomClient {
 		try {
 			// Create chat DataProducer.
 			this._botDataProducer = await this._sendTransport.produceData({
-				ordered: false,
-				maxPacketLifeTime: 2000,
+				// ordered: false,
+				// maxPacketLifeTime: 2000,
+				ordered: true,
 				label: 'bot',
 				priority: 'medium',
 				appData: { info: 'my-bot-DataProducer' },
