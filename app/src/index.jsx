@@ -271,8 +271,8 @@ window.__testSctp = async function ({ timeout = 100, bot = false } = {}) {
 		dp = window.CLIENT._botDataProducer;
 	}
 
-	logger.warn(
-		'<<< testSctp: DataProducer created [bot:%s, streamId:%d, readyState:%s]',
+	logger.debug(
+		'__testSctp() | DataProducer created [bot:%s, streamId:%d, readyState:%s]',
 		bot ? 'true' : 'false',
 		dp.sctpStreamParameters.streamId,
 		dp.readyState
@@ -286,8 +286,8 @@ window.__testSctp = async function ({ timeout = 100, bot = false } = {}) {
 		send();
 	} else {
 		dp.on('open', () => {
-			logger.warn(
-				'<<< testSctp: DataChannel open [streamId:%d]',
+			logger.debug(
+				'testSctp() | DataChannel open [streamId:%d]',
 				dp.sctpStreamParameters.streamId
 			);
 
