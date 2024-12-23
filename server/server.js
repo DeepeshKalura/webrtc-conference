@@ -19,6 +19,7 @@ const mediasoup = require('mediasoup');
 const express = require('express');
 const bodyParser = require('body-parser');
 const { AwaitQueue } = require('awaitqueue');
+const throttle = require('@sitespeed.io/throttle');
 const Logger = require('./lib/Logger');
 const utils = require('./lib/utils');
 const Room = require('./lib/Room');
@@ -114,6 +115,12 @@ async function runMediasoupWorkers()
 		{
 			logger.error(
 				'mediasoup Worker died, exiting  in 2 seconds... [pid:%d]', worker.pid);
+
+			throttle.stop({})
+				.catch((error) =>
+				{
+					logger.error(`failed to stop network throttle:${error}`);
+				});
 
 			setTimeout(() => process.exit(1), 2000);
 		});
