@@ -1216,6 +1216,40 @@ class Room extends EventEmitter
 				// 	directProducer.send(buffer);
 				// });
 
+				/* Test gstreamer.
+				 *
+				 * NOTE: Adapt payloadType to the consumer's payloadType.
+				 * gst-launch-1.0 -v udpsrc port=5004\
+				 * caps="application/x-rtp, media=(string)video, encoding-name=(string)H264, payload=(int)107"\
+				 * ! rtpjitterbuffer ! rtph264depay ! avdec_h264 ! autovideosink
+				 */
+				// if (kind === 'video')
+				// {
+				// 	const plainTransport = await this._mediasoupRouter.createPlainTransport(
+				// 		{
+				// 			listenInfo : {
+				// 				protocol  : 'udp',
+				// 				ip        : '127.0.0.1',
+				// 				// NOTE: Adapt ports to your config.
+				// 				portRange : { min: 2010, max: 2020 }
+				// 			}
+				// 		}
+				// 	);
+
+				// 	plainTransport.connect({ ip: '127.0.0.1', port: 5004 });
+
+				// 	const consumer = await plainTransport.consume(
+				// 		{
+				// 			producerId      : producer.id,
+				// 			rtpCapabilities : this._mediasoupRouter.rtpCapabilities
+				// 		}
+				// 	);
+
+				// 	const dump = await consumer.dump();
+
+				// 	logger.info(`payloadType: ${dump.rtpStream.params.payloadType}`);
+				// }
+
 				// Add into the AudioLevelObserver and ActiveSpeakerObserver.
 				if (producer.kind === 'audio')
 				{
