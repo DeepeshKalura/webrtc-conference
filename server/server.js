@@ -87,6 +87,17 @@ async function run()
 			room.logStatus();
 		}
 	}, 120000);
+
+	process.on('exit', (code) =>
+	{
+		logger.info('process exited with code %o', code);
+
+		throttle.stop({})
+			.catch((error) =>
+			{
+				logger.error(`close() | failed to stop network throttle:${error}`);
+			});
+	});
 }
 
 /**
