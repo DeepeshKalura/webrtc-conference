@@ -1005,7 +1005,7 @@ export default class RoomClient {
 						c => c.kind === 'video'
 					);
 
-				// VP9 with SVC.
+				// VP9 or AV1 with SVC.
 				if (
 					((this._forceVP9 || this._forceAV1) && codec) ||
 					['video/vp9', 'video/av1'].includes(
@@ -1327,7 +1327,7 @@ export default class RoomClient {
 						c => c.kind === 'video'
 					);
 
-				// VP9 with SVC.
+				// VP9 or AV1 with SVC.
 				if (
 					((this._forceVP9 || this._forceAV1) && codec) ||
 					['video/vp9', 'video/av1'].includes(
