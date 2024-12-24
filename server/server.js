@@ -114,7 +114,7 @@ async function runMediasoupWorkers()
 		worker.on('died', () =>
 		{
 			logger.error(
-				'mediasoup Worker died, exiting  in 2 seconds... [pid:%d]', worker.pid);
+				'mediasoup Worker died, exiting  in 5 seconds... [pid:%d]', worker.pid);
 
 			throttle.stop({})
 				.catch((error) =>
@@ -122,7 +122,7 @@ async function runMediasoupWorkers()
 					logger.error(`failed to stop network throttle:${error}`);
 				});
 
-			setTimeout(() => process.exit(1), 2000);
+			setTimeout(() => process.exit(1), 5000);
 		});
 
 		mediasoupWorkers.push(worker);
