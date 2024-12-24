@@ -27,7 +27,6 @@ class Interactive
 	constructor(socket)
 	{
 		this._socket = socket;
-
 		this._isTerminalOpen = false;
 	}
 
