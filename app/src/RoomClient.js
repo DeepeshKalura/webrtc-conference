@@ -258,9 +258,15 @@ export default class RoomClient {
 		this._protoo.close();
 
 		// Close mediasoup Transports.
-		if (this._sendTransport) this._sendTransport.close();
+		if (this._sendTransport) {
+			this._sendTransport.close();
+			this._sendTransport = null;
+		}
 
-		if (this._recvTransport) this._recvTransport.close();
+		if (this._recvTransport) {
+			this._recvTransport.close();
+			this._recvTransport = null;
+		}
 
 		store.dispatch(stateActions.setRoomState('closed'));
 	}
