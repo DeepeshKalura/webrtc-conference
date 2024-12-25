@@ -101,8 +101,8 @@ export default class RoomClient {
 		this._useMic = Boolean(mic);
 
 		// Whether we should enable webcam by default.
-		// @type {Boolean}
-		this._useWebcam = Boolean(webcam);
+		// @type {Boolean | undefined}
+		this._useWebcam = webcam;
 
 		// Whether we want DataChannels.
 		// @type {Boolean}
@@ -2348,7 +2348,8 @@ export default class RoomClient {
 				const devicesCookie = cookiesManager.getDevices();
 
 				if (
-					(this._useWebcam &&
+					this._useWebcam ||
+					(this._useWebcam === undefined &&
 						(!devicesCookie || devicesCookie.webcamEnabled)) ||
 					this._externalVideo
 				)

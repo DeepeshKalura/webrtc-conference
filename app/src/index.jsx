@@ -68,7 +68,12 @@ async function run() {
 	const produce = urlParser.query.produce !== 'false';
 	const consume = urlParser.query.consume !== 'false';
 	const mic = urlParser.query.mic !== 'false';
-	const webcam = urlParser.query.webcam !== 'false';
+	const webcam =
+		urlParser.query.webcam === 'true'
+			? true
+			: urlParser.query.webcam === 'false'
+				? false
+				: undefined;
 	const datachannel = urlParser.query.datachannel !== 'false';
 	const preferLocalCodecsOrder =
 		urlParser.query.preferLocalCodecsOrder === 'true';
