@@ -24,9 +24,9 @@
   "dependencies": {
     "@babel/runtime": "7.26.10",
     "bowser": "2.11.0",
-    "classnames": "2.2.6",
+    "classnames": "2.5.1",
     "clipboard-copy": "3.1.0",
-    "debug": "4.3.1",
+    "debug": "4.4.1",
     "domready": "1.0.8",
     "face-api.js": "0.21.0",
     "hark": "1.2.3",
@@ -44,14 +44,14 @@
     "react-redux": "7.2.0",
     "react-spinner": "0.2.7",
     "react-tooltip": "3.11.1",
-    "react-transition-group": "4.3.0",
+    "react-transition-group": "4.4.5",
     "redux": "4.0.5",
     "redux-thunk": "2.3.0",
     "riek": "1.1.0",
     "url-parse": "1.5.9"
   },
   "devDependencies": {
-    "@types/node": "20",
+    "@types/node": "24",
     "@types/qs": "6.9.17",
     "@types/react-dev-utils": "9.0.15",
     "@vitejs/plugin-react": "4.3.4",
