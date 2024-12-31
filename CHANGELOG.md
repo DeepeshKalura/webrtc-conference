@@ -1,29 +1,60 @@
-# CHANGELOG
+# Changelog
 
-This is the changelog of the mediasoup demo application. To check the changes in **mediasoup** and **mediasoup-client** libraries check their corresponding projects.
+All notable changes to this project will be documented in this file.
 
+## [1.0.0] - 2025-12-30
 
-## 2019-03-17
+### Added
+- Screen sharing options with configurable quality settings
+- Support for VP8, H264, VP9, and AV1 codecs
+- 4K screen sharing capability
+- E2E encryption support for media streams
 
-* Moving app and server to mediasoup v3.
+### Changed
+- Updated all dependencies to latest versions
+- Improved room handling with separate AwaitQueue per room
+- Enhanced simulcast configuration with separate webcam and sharing streams
 
+### Fixed
+- Fixed absCaptureTime header extension compatibility issues
+- Resolved DataChannel connectivity issues
 
-## 2019-02-11
+## [0.9.0] - 2025-12-15
 
-* Remove transport max bitrate artificial limitation.
+### Added
+- TypeScript rewrite of server for better type safety
+- New API server architecture with improved error handling
+- PipeTransports support for multi-router setup
 
+### Changed
+- Migrated server to TypeScript
+- Updated mediasoup to 3.19.x series
+- Improved queue handling for consumer requests
 
-## 2019-01-25
+## [0.8.0] - 2025-11-30
 
-* Update mediasoup to 2.6.8. It fixes a [crash](https://github.com/versatica/mediasoup/issues/258) in the C++ `TcpConnection` class.
-* Update mediasoup-client to 2.4.9.
+### Added
+- Node.js broadcaster support
+- Enhanced terminal connection for debugging
+- Throttling support via sitespeed.io
 
+### Changed
+- Updated mediasoup-client to latest version
+- Improved build configuration
 
-## 2019-01-16
+## [0.7.0] - 2025-11-15
 
-* Update mediasoup to 2.6.7. It fixes a [wrong destruction](https://github.com/versatica/mediasoup/commit/2b76b620b92c15e41fbb5677a326a90f0f365c7e) of Transport C++ instances producing a loop and CPU usage at 100%.
+### Added
+- Initial project setup
+- WebRTC video conferencing with mediasoup SFU
+- React-based client application
+- Vite build system
+- Face detection feature (optional)
+- Consumer replicas for testing
 
-
-## 2019-01-15
-
-* Update mediasoup to 2.6.6. It fixes an important [port leak bug](https://github.com/versatica/mediasoup/issues/259).
+### Features
+- Multi-participant video calls
+- Audio/video muting controls  
+- Screen sharing
+- DataChannels for messaging
+- Responsive UI design

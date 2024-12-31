@@ -1,32 +1,29 @@
 {
-	"name": "mediasoup-demo-server",
-	"version": "3.1.0",
-	"description": "mediasoup-demo server",
-	"author": "Iñaki Baz Castillo <ibc@aliax.net>",
-	"license": "ISC",
-	"homepage": "https://mediasoup.org",
+	"name": "webrtc-conference-server",
+	"version": "1.0.0",
+	"description": "WebRTC Conference Server - Real-time video conferencing solution",
+	"author": "DeepeshKalura <deepeshkalurs@gmail.com>",
+	"license": "MIT",
+	"homepage": "https://github.com/DeepeshKalura/webrtc-conference",
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/versatica/mediasoup-demo.git"
-	},
-	"funding": {
-		"type": "opencollective",
-		"url": "https://opencollective.com/mediasoup"
+		"url": "git+https://github.com/DeepeshKalura/webrtc-conference.git"
 	},
 	"main": "lib/index.js",
 	"types": "lib/index.d.ts",
 	"bin": {
-		"mediasoup-demo-server": "bin/mediasoup-demo-server",
-		"mediasoup-demo-server-connect-terminal": "bin/mediasoup-demo-server-connect-terminal"
+		"webrtc-conference-server": "bin/mediasoup-demo-server",
+		"webrtc-conference-server-terminal": "bin/mediasoup-demo-server-connect-terminal"
 	},
 	"engines": {
-		"node": ">=22"
+		"node": ">=18"
 	},
 	"keywords": [
-		"mediasoup",
 		"webrtc",
+		"video-conference",
 		"sfu",
-		"nodejs"
+		"nodejs",
+		"real-time"
 	],
 	"scripts": {
 		"prepare": "node npm-scripts.mjs prepare",

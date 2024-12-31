@@ -1,10 +1,10 @@
 {
-  "name": "mediasoup-demo-app",
-  "version": "4.0.0",
+  "name": "webrtc-conference-app",
+  "version": "1.0.0",
   "private": true,
-  "description": "mediasoup demo app",
-  "author": "Iñaki Baz Castillo <ibc@aliax.net>",
-  "license": "All Rights Reserved",
+  "description": "WebRTC Conference App - Real-time video conferencing client",
+  "author": "DeepeshKalura <deepeshkalurs@gmail.com>",
+  "license": "MIT",
   "main": "src/index.jsx",
   "type": "module",
   "scripts": {
