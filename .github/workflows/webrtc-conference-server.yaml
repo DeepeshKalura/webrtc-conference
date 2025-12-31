@@ -1,4 +1,4 @@
-name: mediasoup-demo-server
+name: webrtc-conference-server
 
 on:
   push:
